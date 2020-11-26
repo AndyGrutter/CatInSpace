@@ -40,6 +40,9 @@ function page1draw() {
     if (mouseIsPressed && mouseX > circMinX && mouseX < circMaxX && mouseY > circMinY && mouseY < circMaxY)
     {
         circThere = !circThere;
+    }
+    if (mouseIsPressed)
+    {
         mouseIsPressed = false;
     }
 }
