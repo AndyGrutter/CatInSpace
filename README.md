@@ -1,3 +1,3 @@
 # CatInSpace
 
-Heloo, this is a cool story about a cat. Unfortunajdföijeoasj there arent' any bunniess yet. sorry
+Heloo, this is a cool story about a cat. Unfortunajdföijeoasj there arent' any bunniess yet. sorry not sorry
