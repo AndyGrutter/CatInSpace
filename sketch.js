@@ -27,6 +27,7 @@ function setup() {
   dong = new OurImage(dongimg, 50, 100, 20, 0.1, 0.15)
 
   showDingDong = false
+  page1Timer = 0;
 
   // page 2
   image1 = new OurImage(img, 0, 0, 15, 1, 1)
@@ -53,7 +54,12 @@ function page1draw() {
         showDingDong = true;
     }
     if (showDingDong) {
+        page1Timer += deltaTime;
         drawImage(ding);
+    }
+    if (page1Timer > 400)
+    {
+        drawImage(dong);
     }
 } 
 
