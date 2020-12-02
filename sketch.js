@@ -16,7 +16,9 @@ function setup() {
   createCanvas(canvasWidth,canvasHeight);
 
   // page 1
-  image1 = new OurImage(img, 0, 0, 50, 1, 1)
+  image1 = new OurImage(img, 0, 0, 15, 1, 1)
+  frontPorchFG = new OurImage(loadImage("Assetination/layerfrontporch.png"), 0, 0, 10, 1, 1)
+  frontPorchBox = new OurImage(loadImage("Assetination/pinkbox.png"), 440, 500, 12, .17, .17)
   image2 = new OurImage(img2, canvasWidth / 10, canvasHeight / 2, 30, 0.1, 0.2)
   image3 = new OurImage(img3, canvasWidth / 10, canvasHeight / 2, 30, 0.1, 0.2)
 }
@@ -30,6 +32,8 @@ function draw() {
 
 function page1draw() {
     drawImage(image1);
+
+    /*
     if (circThere)
     {
         drawImage(image2);
@@ -43,6 +47,11 @@ function page1draw() {
     {
         circThere = !circThere;
     }
+
+    */
+
+    drawImage(frontPorchFG);
+    drawImage(frontPorchBox);
 }
 
 function drawImage(ourImg)
