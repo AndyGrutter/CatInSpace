@@ -1,6 +1,6 @@
 let img;
 let circThere = true;
-let page = 2;
+let page = 1;
 let mouseIsPressed = false;
 
 let canvasWidth = 1000
@@ -13,6 +13,8 @@ function preload() {
   porchFGImg = loadImage("Assetination/layerfrontporch.png");
   porchBoxImg = loadImage("Assetination/pinkbox.png");
   interiorBGImg = loadImage("Assetination/Page1.png");
+  dingimg = loadImage("Assetination/ding.png")
+  dongimg = loadImage("Assetination/dong.png")
 }
 
 function setup() {
@@ -21,6 +23,8 @@ function setup() {
 
   // page 1
   interiorBG = new OurImage(interiorBGImg, 0, 0, 20, 1, 1);
+  ding = new OurImage(dingimg, 50, 50, 20, 0.1, 0.15)
+  dong = new OurImage(dongimg, 50, 100, 20, 0.1, 0.15)
 
   // page 2
   image1 = new OurImage(img, 0, 0, 15, 1, 1)
@@ -41,6 +45,19 @@ function draw() {
 }
 
 function page1draw() {
+    drawImage(interiorBG)
+    
+    let showDingDong = false
+
+    if (interiorBG.IsClicked){
+        showDingDong = !showDingDong
+    }
+       if (showDingDong) {
+        drawImage(ding)
+}
+} 
+
+function page2draw() {
     drawImage(image1);
 
     /*
@@ -64,9 +81,6 @@ function page1draw() {
     drawImage(frontPorchBox);
 }
 
-function page2draw() {
-    drawImage(interiorBG);
-}
 
 function drawImage(ourImg)
 {
