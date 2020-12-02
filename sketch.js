@@ -26,6 +26,8 @@ function setup() {
   ding = new OurImage(dingimg, 50, 50, 20, 0.1, 0.15)
   dong = new OurImage(dongimg, 50, 100, 20, 0.1, 0.15)
 
+  showDingDong = false
+
   // page 2
   image1 = new OurImage(img, 0, 0, 15, 1, 1)
   frontPorchFG = new OurImage(porchFGImg, 0, 0, 10, 1, 1)
@@ -46,15 +48,13 @@ function draw() {
 
 function page1draw() {
     drawImage(interiorBG)
-    
-    let showDingDong = false
 
-    if (interiorBG.IsClicked){
-        showDingDong = !showDingDong
+    if (interiorBG.IsClicked()){
+        showDingDong = true;
     }
-       if (showDingDong) {
-        drawImage(ding)
-}
+    if (showDingDong) {
+        drawImage(ding);
+    }
 } 
 
 function page2draw() {
@@ -105,6 +105,8 @@ class OurImage
 
     IsClicked()
     {
+        print("aöfjoiewjoö")
+
         let circMinX = this.x;
         let circMaxX = this.x + this.width * canvasWidth;
         let circMinY = this.y;
