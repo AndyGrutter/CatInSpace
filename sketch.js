@@ -24,7 +24,7 @@ function setup() {
   // page 1
   interiorBG = new OurImage(interiorBGImg, 0, 0, 20, 1, 1);
   ding = new OurImage(dingimg, 50, 50, 20, 0.1, 0.15)
-  dong = new OurImage(dongimg, 50, 100, 20, 0.1, 0.15)
+  dong = new OurImage(dongimg, 80, 140, 20, 0.1, 0.15)
 
   showDingDong = false
   page1Timer = 0;
