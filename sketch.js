@@ -18,15 +18,16 @@ function preload() {
 function setup() {
   createCanvas(canvasWidth,canvasHeight);
 
+
   // page 1
+  interiorBG = new OurImage(interiorBGImg, 0, 0, 20, 1, 1);
+
+  // page 2
   image1 = new OurImage(img, 0, 0, 15, 1, 1)
   frontPorchFG = new OurImage(porchFGImg, 0, 0, 10, 1, 1)
   frontPorchBox = new OurImage(porchBoxImg, 440, 480, 12, .15, .2)
   image2 = new OurImage(img2, canvasWidth / 10, canvasHeight / 2, 30, 0.1, 0.2)
   image3 = new OurImage(img3, canvasWidth / 10, canvasHeight / 2, 30, 0.1, 0.2)
-
-  // page 2
-  interiorBG = new OurImage(interiorBGImg, 0, 0, 20, 1, 1);
 }
 
 function draw() {
