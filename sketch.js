@@ -7,13 +7,22 @@ let canvasWidth = 1000
 let canvasHeight = 600
 
 function preload() {
-  img = loadImage('Assetination/jean-philippe-delberghe-SxYm8d6rmUs-unsplash.jpg');
+  img = loadImage('Assetination/Doorbackground.jpg');
   img2 = loadImage('Assetination/fg.png');
   img3 = loadImage('Assetination/fg2.png');
+  porchFGImg = loadImage("Assetination/layerfrontporch.png");
+  porchBoxImg = loadImage("Assetination/pinkbox.png");
 }
 
 function setup() {
   createCanvas(canvasWidth,canvasHeight);
+
+  // page 1
+  image1 = new OurImage(img, 0, 0, 15, 1, 1)
+  frontPorchFG = new OurImage(porchFGImg, 0, 0, 10, 1, 1)
+  frontPorchBox = new OurImage(porchBoxImg, 440, 500, 12, .17, .17)
+  image2 = new OurImage(img2, canvasWidth / 10, canvasHeight / 2, 30, 0.1, 0.2)
+  image3 = new OurImage(img3, canvasWidth / 10, canvasHeight / 2, 30, 0.1, 0.2)
 }
 
 function draw() {
@@ -24,37 +33,68 @@ function draw() {
 }
 
 function page1draw() {
-    //image(img, -50 + -(mouseX *  0.05), -50 + -(mouseY * 0.1), 1100,700);
-    drawImage(img, 0, 0, 50);
+    drawImage(image1);
+
+    /*
     if (circThere)
     {
-        image(img2, 500 + -(mouseX * 0.2), 300 + -(mouseY * 0.2), 100,100);
+        drawImage(image2);
     }
     else
     {
-        image(img3, 500 + -(mouseX * 0.2), 300 + -(mouseY * 0.2), 100,100);
+        drawImage(image3);
     }
 
-    circMinX = 440;
-    circMaxX = 480;
-    circMinY = 270;
-    circMaxY = 315;
-
-    if (mouseIsPressed && mouseX > circMinX && mouseX < circMaxX && mouseY > circMinY && mouseY < circMaxY)
+    if (image2.IsClicked())
     {
         circThere = !circThere;
     }
-    if (mouseIsPressed)
-    {
-        mouseIsPressed = false;
-    }
+
+    */
+
+    drawImage(frontPorchFG);
+    drawImage(frontPorchBox);
 }
 
-function drawImage(img, x, y, parallaxOffset)
+function drawImage(ourImg)
 {
-    image(img, x -parallaxOffset + ((mouseX / canvasWidth) * parallaxOffset), y -parallaxOffset + ((mouseY / canvasHeight) * parallaxOffset), 1100,700);
+    image(ourImg.img, ourImg.x -ourImg.parallaxOffset + ((mouseX / canvasWidth) * ourImg.parallaxOffset), ourImg.y -ourImg.parallaxOffset + ((mouseY / canvasHeight) * ourImg.parallaxOffset), (canvasWidth + ourImg.parallaxOffset*2) * ourImg.width, (canvasHeight + ourImg.parallaxOffset*2) * ourImg.height);
 }
 
 function mousePressed() {
     mouseIsPressed = true;
+}
+
+class OurImage
+{
+    constructor(img, x, y, parallaxOffset, width, height)
+    {
+        this.img = img;
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.parallaxOffset = parallaxOffset;
+    }
+
+    IsClicked()
+    {
+        let circMinX = this.x;
+        let circMaxX = this.x + this.width * canvasWidth;
+        let circMinY = this.y;
+        let circMaxY = this.y + this.height * canvasHeight;
+
+        if (mouseIsPressed && mouseX > circMinX && mouseX < circMaxX && mouseY > circMinY && mouseY < circMaxY)
+        {
+            mouseIsPressed = false;
+            return true;
+        }
+
+        if (mouseIsPressed)
+        {
+            mouseIsPressed = false;
+        }
+        
+        return false;
+    }
 }
