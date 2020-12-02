@@ -10,6 +10,8 @@ function preload() {
   img = loadImage('Assetination/Doorbackground.jpg');
   img2 = loadImage('Assetination/fg.png');
   img3 = loadImage('Assetination/fg2.png');
+  porchFGImg = loadImage("Assetination/layerfrontporch.png");
+  porchBoxImg = loadImage("Assetination/pinkbox.png");
 }
 
 function setup() {
@@ -17,8 +19,8 @@ function setup() {
 
   // page 1
   image1 = new OurImage(img, 0, 0, 15, 1, 1)
-  frontPorchFG = new OurImage(loadImage("Assetination/layerfrontporch.png"), 0, 0, 10, 1, 1)
-  frontPorchBox = new OurImage(loadImage("Assetination/pinkbox.png"), 440, 500, 12, .17, .17)
+  frontPorchFG = new OurImage(porchFGImg, 0, 0, 10, 1, 1)
+  frontPorchBox = new OurImage(porchBoxImg, 440, 500, 12, .17, .17)
   image2 = new OurImage(img2, canvasWidth / 10, canvasHeight / 2, 30, 0.1, 0.2)
   image3 = new OurImage(img3, canvasWidth / 10, canvasHeight / 2, 30, 0.1, 0.2)
 }
