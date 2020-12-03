@@ -16,6 +16,7 @@ function preload() {
   pinkplantImg = loadImage("Assetination/Ebene 1.png")
   pillowImg = loadImage("Assetination/Ebene 4.png");
   chairImg = loadImage("Assetination/Ebene 3.png");
+  catbedImg = loadImage("Assetination/catandbed.png")
   dingimg = loadImage("Assetination/ding.png")
   dongimg = loadImage("Assetination/dong.png")
   dotsimg = loadImage("Assetination/dottexture.png")
@@ -33,6 +34,7 @@ function setup() {
   pinkplant = new OurImage (pinkplantImg, 730, 120, 2, 0.3, 0.5);
   pillow = new OurImage (pillowImg, 500, 250, 2, 0.15, 0.2);
   chair = new OurImage (chairImg, 100, 200, 2, 0.2, 0.5);
+  cat = new OurImage (catbedImg, 300, 370, 2, 0.35, 0.35);
   
   
 
@@ -61,6 +63,7 @@ function page1draw() {
     drawImage(pinkplant);
     drawImage(pillow);
     drawImage(chair);
+    drawImage(cat);
     drawImage(dot);
 
     if (interiorBG.IsClicked()) {
