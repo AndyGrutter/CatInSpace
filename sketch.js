@@ -7,6 +7,7 @@ let canvasWidth = 1000
 let canvasHeight = 600
 
 function preload() {
+<<<<<<< Updated upstream
   img = loadImage('Assetination/Doorbackground.jpg');
   img2 = loadImage('Assetination/fg.png');
   img3 = loadImage('Assetination/fg2.png');
@@ -21,23 +22,38 @@ function preload() {
   dingimg = loadImage("Assetination/ding.png")
   dongimg = loadImage("Assetination/dong.png")
   dotsimg = loadImage("Assetination/dottexture.png")
+=======
+    img = loadImage('Assetination/Doorbackground.jpg');
+    img2 = loadImage('Assetination/fg.png');
+    img3 = loadImage('Assetination/fg2.png');
+    porchFGImg = loadImage("Assetination/layerfrontporch.png");
+    porchBoxImg = loadImage("Assetination/pinkbox.png");
+    interiorBGImg = loadImage("Assetination/insidebg.png");
+    pinkplantImg = loadImage("Assetination/Ebene 1.png")
+    pillowImg = loadImage("Assetination/Ebene 4.png");
+    chairImg = loadImage("Assetination/Ebene 3.png");
+    catbedImg = loadImage("Assetination/catandbed.png")
+    dingimg = loadImage("Assetination/ding.png")
+    dongimg = loadImage("Assetination/dong.png")
+    dotsimg = loadImage("Assetination/dottexture.png")
+>>>>>>> Stashed changes
 }
 
 function setup() {
     createCanvas(canvasWidth, canvasHeight);
 
 
-  // page 1
-  interiorBG = new OurImage(interiorBGImg, 0, 0, 20, 1, 1);
-  ding = new OurImage(dingimg, 50, 50, 20, 0.17, 0.15)
-  dong = new OurImage(dongimg, 80, 140, 20, 0.17, 0.15)
-  dot = new OurImage(dotsimg, 0, 0, 20, 1, 1);
-  pinkplant = new OurImage (pinkplantImg, 730, 120, 16, 0.3, 0.5);
-  pillow = new OurImage (pillowImg, 500, 250, 16, 0.15, 0.2);
-  chair = new OurImage (chairImg, 100, 200, 16, 0.2, 0.5);
-  cat = new OurImage (catbedImg, 300, 370, 16, 0.35, 0.35);
-  
-  
+    // page 1
+    interiorBG = new OurImage(interiorBGImg, 0, 0, 20, 1, 1);
+    ding = new OurImage(dingimg, 50, 50, 20, 0.17, 0.15)
+    dong = new OurImage(dongimg, 80, 140, 20, 0.17, 0.15)
+    dot = new OurImage(dotsimg, 0, 0, 20, 1, 1);
+    pinkplant = new OurImage(pinkplantImg, 730, 120, 16, 0.3, 0.5);
+    pillow = new OurImage(pillowImg, 500, 250, 16, 0.15, 0.2);
+    chair = new OurImage(chairImg, 100, 200, 16, 0.2, 0.5);
+    cat = new OurImage(catbedImg, 300, 370, 16, 0.35, 0.35);
+
+
 
 
     showDingDong = false
@@ -62,14 +78,27 @@ function draw() {
 
 function page1draw() {
     drawImage(interiorBG);
-    drawImage(pinkplant);
-    drawImage(pillow);
-    drawImage(chair);
+
+    if (pinkplant.IsHovered()) {
+        drawImage(pinkplant, 0.3, 150, 150);
+    }
+    else { drawImage(pinkplant) }
+
+    if (pillow.IsHovered()) {
+        drawImage(pillow, 0.3, 80, 40);
+    }
+    else { drawImage(pillow) }
+
+    if (chair.IsHovered()) {
+        drawImage(chair, 0.3, 120, 170);
+    }
+    else { drawImage(chair) }
+
     drawImage(dot);
     drawImage(cat);
 
     if (interiorBG.IsClicked()) {
-       
+
         if (showDingDong) {
             page = 2;
         }
@@ -86,7 +115,7 @@ function page1draw() {
 
 function page2draw() {
     drawImage(image1);
-   // drawImage(dot);
+    // drawImage(dot);
 
     /*
     if (circThere)
@@ -111,8 +140,16 @@ function page2draw() {
 }
 
 
-function drawImage(ourImg) {
-    image(ourImg.img, ourImg.x - ourImg.parallaxOffset + ((mouseX / canvasWidth) * ourImg.parallaxOffset), ourImg.y - ourImg.parallaxOffset + ((mouseY / canvasHeight) * ourImg.parallaxOffset), (canvasWidth + ourImg.parallaxOffset * 2) * ourImg.width, (canvasHeight + ourImg.parallaxOffset * 2) * ourImg.height);
+function drawImage(ourImg, rotation = 0, rotationXOffset = 0, rotationYOffset = 0) {
+    let imgX = ourImg.x - ourImg.parallaxOffset + ((mouseX / canvasWidth) * ourImg.parallaxOffset)
+    let imgY = ourImg.y - ourImg.parallaxOffset + ((mouseY / canvasHeight) * ourImg.parallaxOffset)
+    translate(imgX + rotationXOffset, imgY + rotationYOffset)
+    rotate(rotation)
+    translate(-(imgX + rotationXOffset), -(imgY + rotationYOffset))
+    image(ourImg.img, imgX, imgY, (canvasWidth + ourImg.parallaxOffset * 2) * ourImg.width, (canvasHeight + ourImg.parallaxOffset * 2) * ourImg.height);
+    translate(imgX + rotationXOffset, imgY + rotationYOffset)
+    rotate(-rotation)
+    translate(-(imgX + rotationXOffset), -(imgY + rotationYOffset))
 }
 
 function mousePressed() {
@@ -144,6 +181,21 @@ class OurImage {
         if (mouseIsPressed) {
             mouseIsPressed = false;
         }
+
+        return false;
+    }
+    IsHovered() {
+
+        let circMinX = this.x;
+        let circMaxX = this.x + this.width * canvasWidth;
+        let circMinY = this.y;
+        let circMaxY = this.y + this.height * canvasHeight;
+
+        if (mouseX > circMinX && mouseX < circMaxX && mouseY > circMinY && mouseY < circMaxY) {
+            return true;
+        }
+
+
 
         return false;
     }
