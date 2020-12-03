@@ -63,8 +63,8 @@ function page1draw() {
     drawImage(pinkplant);
     drawImage(pillow);
     drawImage(chair);
-    drawImage(cat);
     drawImage(dot);
+    drawImage(cat);
 
     if (interiorBG.IsClicked()) {
        
@@ -105,8 +105,8 @@ function page2draw() {
     */
 
     drawImage(frontPorchFG);
-    drawImage(frontPorchBox);
     drawImage(dot);
+    drawImage(frontPorchBox);
 }
 
 
