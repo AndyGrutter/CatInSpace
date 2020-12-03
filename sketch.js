@@ -15,6 +15,7 @@ function preload() {
   interiorBGImg = loadImage("Assetination/Page1.png");
   dingimg = loadImage("Assetination/ding.png")
   dongimg = loadImage("Assetination/dong.png")
+  dotsimg = loadImage("Assetination/dottexture.png")
 }
 
 function setup() {
@@ -25,6 +26,8 @@ function setup() {
   interiorBG = new OurImage(interiorBGImg, 0, 0, 20, 1, 1);
   ding = new OurImage(dingimg, 50, 50, 20, 0.17, 0.15)
   dong = new OurImage(dongimg, 80, 140, 20, 0.17, 0.15)
+  dot = new OurImage(dotsimg, 0, 0, 20, 1, 1);
+
 
   showDingDong = false
   page1Timer = 0;
@@ -48,7 +51,8 @@ function draw() {
 }
 
 function page1draw() {
-    drawImage(interiorBG)
+    drawImage(interiorBG);
+    drawImage(dot);
 
     if (interiorBG.IsClicked()){
         showDingDong = true;
@@ -65,6 +69,7 @@ function page1draw() {
 
 function page2draw() {
     drawImage(image1);
+    drawImage(dot);
 
     /*
     if (circThere)
