@@ -6,6 +6,8 @@ let mouseIsPressed = false;
 let canvasWidth = 1000
 let canvasHeight = 600
 
+let tick = 0;
+
 function preload() {
     img = loadImage('Assetination/Doorbackground.jpg');
     img2 = loadImage('Assetination/fg.png');
@@ -39,9 +41,6 @@ function setup() {
     chair = new OurImage(chairImg, 100, 200, 16, 0.2, 0.5);
     cat = new OurImage(catbedImg, 300, 370, 16, 0.35, 0.35);
 
-
-
-
     showDingDong = false
     page1Timer = 0;
 
@@ -55,9 +54,13 @@ function setup() {
     drawingBlue = new OurImage(drawingBImg, 440, 480, 12, .15, .2);
     image2 = new OurImage(img2, canvasWidth / 10, canvasHeight / 2, 30, 0.1, 0.2)
     image3 = new OurImage(img3, canvasWidth / 10, canvasHeight / 2, 30, 0.1, 0.2)
+
+    
 }
 
 function draw() {
+    tick++;
+
     if (page == 1) {
         page1draw();
     } else if (page == 2) {
@@ -127,8 +130,8 @@ function page2draw() {
     drawImage(dot);
     drawImage(drawingBlue);
     drawImage(frontPorchBox);
-    drawImage(drawingYellow1);
-    drawImage(drawingYellow2);
+    drawImage(drawingYellow1, Math.sin(tick/40) * 0.1, 60, 60);
+    drawImage(drawingYellow2, -(Math.sin(tick/40) * 0.1), 60, 60);
 }
 
 
