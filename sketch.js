@@ -17,10 +17,12 @@ function preload() {
     pinkplantImg = loadImage("Assetination/Ebene 1.png")
     pillowImg = loadImage("Assetination/Ebene 4.png");
     chairImg = loadImage("Assetination/Ebene 3.png");
-    catbedImg = loadImage("Assetination/catandbed.png")
-    dingimg = loadImage("Assetination/ding.png")
-    dongimg = loadImage("Assetination/dong.png")
-    dotsimg = loadImage("Assetination/dottexture.png")
+    catbedImg = loadImage("Assetination/catandbed.png");
+    dingimg = loadImage("Assetination/ding.png");
+    dongimg = loadImage("Assetination/dong.png");
+    dotsimg = loadImage("Assetination/dottexture.png");
+    drawingYImg = loadImage("Assetination/lightyellow.png");
+    drawingBImg = loadImage("Assetination/bluelight.png");
 }
 
 function setup() {
@@ -29,8 +31,8 @@ function setup() {
 
     // page 1
     interiorBG = new OurImage(interiorBGImg, 0, 0, 20, 1, 1);
-    ding = new OurImage(dingimg, 50, 50, 20, 0.17, 0.15)
-    dong = new OurImage(dongimg, 80, 140, 20, 0.17, 0.15)
+    ding = new OurImage(dingimg, 50, 50, 20, 0.17, 0.15);
+    dong = new OurImage(dongimg, 80, 140, 20, 0.17, 0.15);
     dot = new OurImage(dotsimg, 0, 0, 20, 1, 1);
     pinkplant = new OurImage(pinkplantImg, 730, 120, 16, 0.3, 0.5);
     pillow = new OurImage(pillowImg, 500, 250, 16, 0.15, 0.2);
@@ -48,6 +50,9 @@ function setup() {
     chairtable = new OurImage (chairtableImg, 100, 350, 12, .35, .45);
     frontPorchFG = new OurImage(porchFGImg, 0, 0, 10, 1, 1)
     frontPorchBox = new OurImage(porchBoxImg, 440, 480, 12, .15, .2)
+    drawingYellow1 = new OurImage(drawingYImg, 250, 150, 12, .15, .2);
+    drawingYellow2 = new OurImage(drawingYImg, 610, 150, 12, .15, .2);
+    drawingBlue = new OurImage(drawingBImg, 440, 480, 12, .15, .2);
     image2 = new OurImage(img2, canvasWidth / 10, canvasHeight / 2, 30, 0.1, 0.2)
     image3 = new OurImage(img3, canvasWidth / 10, canvasHeight / 2, 30, 0.1, 0.2)
 }
@@ -120,7 +125,10 @@ function page2draw() {
     drawImage(chairtable);
     drawImage(frontPorchFG);
     drawImage(dot);
+    drawImage(drawingBlue);
     drawImage(frontPorchBox);
+    drawImage(drawingYellow1);
+    drawImage(drawingYellow2);
 }
 
 
