@@ -51,15 +51,12 @@ function draw() {
 function page1draw() {
     drawImage(interiorBG);
     drawImage(dot);
-    drawImage(pinkplant);
-    drawImage(pillow);
-    drawImage(chair);
 
     if (interiorBG.IsClicked()) {
        
         if (showDingDong) {
             page = 2;
-            
+            print("aöfjoiewjoö")
         }
         showDingDong = true;
     }
