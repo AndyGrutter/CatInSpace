@@ -58,7 +58,6 @@ function draw() {
 
 function page1draw() {
     drawImage(interiorBG);
-    //drawImage(dot);
     drawImage(pinkplant);
     drawImage(pillow);
     drawImage(chair);
