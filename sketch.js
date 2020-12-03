@@ -55,7 +55,10 @@ function setup() {
     image2 = new OurImage(img2, canvasWidth / 10, canvasHeight / 2, 30, 0.1, 0.2)
     image3 = new OurImage(img3, canvasWidth / 10, canvasHeight / 2, 30, 0.1, 0.2)
 
-    
+    boxClickCounter = 0;
+    boxJumpVelocity = 0;
+    boxGravity = 14;
+    boxGroundLevel = frontPorchBox.y;
 }
 
 function draw() {
@@ -107,24 +110,6 @@ function page1draw() {
 
 function page2draw() {
     drawImage(image1);
-    // drawImage(dot);
-
-    /*
-    if (circThere)
-    {
-        drawImage(image2);
-    }
-    else
-    {
-        drawImage(image3);
-    }
-
-    if (image2.IsClicked())
-    {
-        circThere = !circThere;
-    }
-
-    */
     drawImage(chairtable);
     drawImage(frontPorchFG);
     drawImage(dot);
@@ -132,6 +117,27 @@ function page2draw() {
     drawImage(frontPorchBox);
     drawImage(drawingYellow1, Math.sin(tick/40) * 0.1, 60, 60);
     drawImage(drawingYellow2, -(Math.sin(tick/40) * 0.1), 60, 60);
+
+    if (frontPorchBox.IsClicked())
+    {
+        boxJumpVelocity = 15 + (boxClickCounter * 2);
+        boxClickCounter++;
+    }
+    frontPorchBox.y += boxGravity;
+    frontPorchBox.y -= boxJumpVelocity;
+    if (boxJumpVelocity > 0)
+    {
+        boxJumpVelocity -= 0.1;
+    }
+    if (frontPorchBox.y > boxGroundLevel)
+    {
+        frontPorchBox.y = boxGroundLevel;
+    }
+
+    if (boxClickCounter >= 3)
+    {
+        // open box
+    }
 }
 
 
