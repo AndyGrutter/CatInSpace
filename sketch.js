@@ -12,7 +12,8 @@ function preload() {
   img3 = loadImage('Assetination/fg2.png');
   porchFGImg = loadImage("Assetination/layerfrontporch.png");
   porchBoxImg = loadImage("Assetination/pinkbox.png");
-  interiorBGImg = loadImage("Assetination/Page1.png");
+  interiorBGImg = loadImage("Assetination/insidebg.png");
+  pinkplantImg = loadImage("Assetination/Ebene 1.png")
   dingimg = loadImage("Assetination/ding.png")
   dongimg = loadImage("Assetination/dong.png")
   dotsimg = loadImage("Assetination/dottexture.png")
@@ -27,6 +28,8 @@ function setup() {
   ding = new OurImage(dingimg, 50, 50, 20, 0.17, 0.15)
   dong = new OurImage(dongimg, 80, 140, 20, 0.17, 0.15)
   dot = new OurImage(dotsimg, 0, 0, 20, 1, 1);
+  pinkplant = new OurImage (pinkplantImg, 730, 120, 2, 0.3, 0.5);
+  
 
 
   showDingDong = false
@@ -53,6 +56,7 @@ function draw() {
 function page1draw() {
     drawImage(interiorBG);
     drawImage(dot);
+    drawImage(pinkplant);
 
     if (interiorBG.IsClicked()){
         showDingDong = true;
