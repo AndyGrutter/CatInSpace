@@ -1,6 +1,6 @@
 let img;
 let circThere = true;
-let page = 1;
+let page = 2;
 let mouseIsPressed = false;
 
 let canvasWidth = 1000
@@ -10,6 +10,7 @@ function preload() {
   img = loadImage('Assetination/Doorbackground.jpg');
   img2 = loadImage('Assetination/fg.png');
   img3 = loadImage('Assetination/fg2.png');
+  chairtableImg = loadImage ("Assetination/chairtable.png")
   porchFGImg = loadImage("Assetination/layerfrontporch.png");
   porchBoxImg = loadImage("Assetination/pinkbox.png");
   interiorBGImg = loadImage("Assetination/insidebg.png");
@@ -44,6 +45,7 @@ function setup() {
 
     // page 2
     image1 = new OurImage(img, 0, 0, 15, 1, 1)
+    chairtable = new OurImage (chairtableImg, 100, 350, 12, .35, .45);
     frontPorchFG = new OurImage(porchFGImg, 0, 0, 10, 1, 1)
     frontPorchBox = new OurImage(porchBoxImg, 440, 480, 12, .15, .2)
     image2 = new OurImage(img2, canvasWidth / 10, canvasHeight / 2, 30, 0.1, 0.2)
@@ -102,7 +104,7 @@ function page2draw() {
     }
 
     */
-
+    drawImage(chairtable);
     drawImage(frontPorchFG);
     drawImage(dot);
     drawImage(frontPorchBox);
