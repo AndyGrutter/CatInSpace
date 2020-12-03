@@ -12,13 +12,9 @@ html, body {
     /* This centers our sketch vertically. */
     align-items: center;
   }
-.lights {
-    position: absolute;
-    width: 30%;
-    height: 30%;
-    left: 50%;
-    top: 50%;
-    z-index: -1;
-  }
- 
+
+ /*  .frame {
+      position: absolute;
+
+  } */
   
