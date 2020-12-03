@@ -7,22 +7,6 @@ let canvasWidth = 1000
 let canvasHeight = 600
 
 function preload() {
-<<<<<<< Updated upstream
-  img = loadImage('Assetination/Doorbackground.jpg');
-  img2 = loadImage('Assetination/fg.png');
-  img3 = loadImage('Assetination/fg2.png');
-  chairtableImg = loadImage ("Assetination/chairtable.png")
-  porchFGImg = loadImage("Assetination/layerfrontporch.png");
-  porchBoxImg = loadImage("Assetination/pinkbox.png");
-  interiorBGImg = loadImage("Assetination/insidebg.png");
-  pinkplantImg = loadImage("Assetination/Ebene 1.png")
-  pillowImg = loadImage("Assetination/Ebene 4.png");
-  chairImg = loadImage("Assetination/Ebene 3.png");
-  catbedImg = loadImage("Assetination/catandbed.png")
-  dingimg = loadImage("Assetination/ding.png")
-  dongimg = loadImage("Assetination/dong.png")
-  dotsimg = loadImage("Assetination/dottexture.png")
-=======
     img = loadImage('Assetination/Doorbackground.jpg');
     img2 = loadImage('Assetination/fg.png');
     img3 = loadImage('Assetination/fg2.png');
@@ -36,7 +20,6 @@ function preload() {
     dingimg = loadImage("Assetination/ding.png")
     dongimg = loadImage("Assetination/dong.png")
     dotsimg = loadImage("Assetination/dottexture.png")
->>>>>>> Stashed changes
 }
 
 function setup() {
