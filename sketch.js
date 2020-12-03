@@ -32,9 +32,9 @@ function setup() {
   dong = new OurImage(dongimg, 80, 140, 20, 0.17, 0.15)
   dot = new OurImage(dotsimg, 0, 0, 20, 1, 1);
   pinkplant = new OurImage (pinkplantImg, 730, 120, 2, 0.3, 0.5);
-  pillow = new OurImage (pillowImg, 500, 250, 2, 0.15, 0.2);
-  chair = new OurImage (chairImg, 100, 200, 2, 0.2, 0.5);
-  cat = new OurImage (catbedImg, 300, 370, 2, 0.35, 0.35);
+  pillow = new OurImage (pillowImg, 500, 250, 16, 0.15, 0.2);
+  chair = new OurImage (chairImg, 100, 200, 16, 0.2, 0.5);
+  cat = new OurImage (catbedImg, 300, 370, 16, 0.35, 0.35);
   
   
 
