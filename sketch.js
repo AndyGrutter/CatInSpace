@@ -15,6 +15,7 @@ function preload() {
     chairtableImg = loadImage("Assetination/chairtable.png");
     porchFGImg = loadImage("Assetination/layerfrontporch.png");
     porchBoxImg = loadImage("Assetination/pinkbox.png");
+    porchBoxOpenImg = loadImage("Assetination/pinkboxOPEN.png");
     interiorBGImg = loadImage("Assetination/insidebg.png");
     pinkplantImg = loadImage("Assetination/Ebene 1.png")
     pillowImg = loadImage("Assetination/Ebene 4.png");
@@ -25,6 +26,7 @@ function preload() {
     dotsimg = loadImage("Assetination/dottexture.png");
     drawingYImg = loadImage("Assetination/lightyellow.png");
     drawingBImg = loadImage("Assetination/bluelight.png");
+    page3BgImg = loadImage("Assetination/quartier1 1.png");
 }
 
 function setup() {
@@ -59,6 +61,11 @@ function setup() {
     boxJumpVelocity = 0;
     boxGravity = 14;
     boxGroundLevel = frontPorchBox.y;
+    boxOpenTimer = 0;
+    boxOpenInFrames = 230;
+
+    // page 3
+    page3BG = new OurImage(page3BgImg, 0, 0, 20, 1, 1);
 }
 
 function draw() {
@@ -68,6 +75,8 @@ function draw() {
         page1draw();
     } else if (page == 2) {
         page2draw();
+    } else if (page == 3) {
+        page3draw();
     }
 }
 
@@ -89,7 +98,6 @@ function page1draw() {
     }
     else { drawImage(chair) }
 
-    drawImage(dot);
     drawImage(cat);
 
     if (interiorBG.IsClicked()) {
@@ -106,19 +114,20 @@ function page1draw() {
     if (page1Timer > 400) {
         drawImage(dong);
     }
+
+    drawImage(dot);
 }
 
 function page2draw() {
     drawImage(image1);
     drawImage(chairtable);
     drawImage(frontPorchFG);
-    drawImage(dot);
     drawImage(drawingBlue);
     drawImage(frontPorchBox);
     drawImage(drawingYellow1, Math.sin(tick/40) * 0.1, 60, 60);
     drawImage(drawingYellow2, -(Math.sin(tick/40) * 0.1), 60, 60);
 
-    if (frontPorchBox.IsClicked())
+    if (frontPorchBox.IsClicked() && boxClickCounter < 3)
     {
         boxJumpVelocity = 15 + (boxClickCounter * 2);
         boxClickCounter++;
@@ -136,8 +145,22 @@ function page2draw() {
 
     if (boxClickCounter >= 3)
     {
-        // open box
+        boxOpenTimer++;
+        frontPorchBox.img = porchBoxOpenImg;
     }
+
+    if (boxOpenTimer >= boxOpenInFrames)
+    {
+        page = 3;
+    }
+
+    drawImage(dot);
+}
+
+function page3draw() {
+    drawImage(page3BG);
+
+    drawImage(dot);
 }
 
 
