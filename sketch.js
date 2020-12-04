@@ -32,6 +32,8 @@ function preload() {
     page3GameImg = loadImage("Assetination/gamebox.png");
     catLookingImg = loadImage("Assetination/cat_lookingAROUND3.gif")
     catLookBoxImg = loadImage("Assetination/catlookatbox.png")
+    livingRoomImg = loadImage("Assetination/livingroom.jpg")
+    tvImg = loadImage("Assetination/tv.png")
 }
 
 function setup() {
@@ -53,7 +55,7 @@ function setup() {
 
     // page 2
     image1 = new OurImage(img, 0, 0, 15, 1, 1)
-    chairtable = new OurImage (chairtableImg, 100, 350, 12, .35, .45);
+    chairtable = new OurImage(chairtableImg, 100, 350, 12, .35, .45);
     frontPorchFG = new OurImage(porchFGImg, 0, 0, 10, 1, 1)
     frontPorchBox = new OurImage(porchBoxImg, 440, 480, 12, .15, .2)
     drawingYellow1 = new OurImage(drawingYImg, 250, 150, 12, .15, .2);
@@ -80,6 +82,9 @@ function setup() {
     currenntHighlightRotation = 0;
 
     // page 4
+    livingRoom = new OurImage(livingRoomImg, 0, 0, 20, 1, 1);
+    tv = new OurImage(tvImg, 230, 65, 15, 0.6, 0.6);
+
 }
 
 function draw() {
@@ -91,9 +96,9 @@ function draw() {
         page2draw();
     } else if (page == 3) {
         page3draw();
-    }    else if (page == 4) {
-            page4draw();
-}
+    } else if (page == 4) {
+        page4draw();
+    }
 }
 
 function page1draw() {
@@ -142,34 +147,29 @@ function page2draw() {
 
     drawImage(dot);
     drawImage(frontPorchBox);
-    drawImage(drawingYellow1, Math.sin(tick/40) * 0.1, 60, 60);
-    drawImage(drawingYellow2, -(Math.sin(tick/40) * 0.1), 60, 60);
+    drawImage(drawingYellow1, Math.sin(tick / 40) * 0.1, 60, 60);
+    drawImage(drawingYellow2, -(Math.sin(tick / 40) * 0.1), 60, 60);
     drawImage(catLookBox);
 
-    if (frontPorchBox.IsClicked() && boxClickCounter < 3)
-    {
+    if (frontPorchBox.IsClicked() && boxClickCounter < 3) {
         boxJumpVelocity = 15 + (boxClickCounter * 2);
         boxClickCounter++;
     }
     frontPorchBox.y += boxGravity;
     frontPorchBox.y -= boxJumpVelocity;
-    if (boxJumpVelocity > 0)
-    {
+    if (boxJumpVelocity > 0) {
         boxJumpVelocity -= 0.1;
     }
-    if (frontPorchBox.y > boxGroundLevel)
-    {
+    if (frontPorchBox.y > boxGroundLevel) {
         frontPorchBox.y = boxGroundLevel;
     }
 
-    if (boxClickCounter >= 3)
-    {
+    if (boxClickCounter >= 3) {
         boxOpenTimer++;
         frontPorchBox.img = porchBoxOpenImg;
     }
 
-    if (boxOpenTimer >= boxOpenInFrames)
-    {
+    if (boxOpenTimer >= boxOpenInFrames) {
         page = 3;
     }
 }
@@ -181,12 +181,17 @@ function page3draw() {
     drawImage(page3Box);
     drawImage(dot);
     drawImage(drawingBlue2, currenntHighlightRotation, 250, 250);
-    drawImage(page3Game, sin(tick/20) * 0.1, 100, 90);
+    drawImage(page3Game, sin(tick / 20) * 0.1, 100, 90);
     drawImage(catLooking);
+
+    if (page3BG.IsClicked()){
+        page = 4;
+    }
 }
 
 function page4draw() {
-
+    drawImage(livingRoom)
+    drawImage(tv)
 
 
 }
