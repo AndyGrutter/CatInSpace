@@ -75,7 +75,11 @@ function setup() {
     page3Box = new OurImage(page3BoxImg, 200, 120, 40, .6, .7);
     page3Game = new OurImage(page3GameImg, 400, 250, 40, .2, .35);
     catLooking = new OurImage(catLookingImg, 500, 300, 50, .5, .5);
-    drawingBlue2 = new OurImage(drawingBImg2, 250, 150, 4, 0.5, 0.8);
+    drawingBlue2 = new OurImage(drawingBImg2, 240, 110, 4, 0.5, 0.8);
+
+    currenntHighlightRotation = 0;
+
+    // page 4
 }
 
 function draw() {
@@ -87,7 +91,9 @@ function draw() {
         page2draw();
     } else if (page == 3) {
         page3draw();
-    }
+    }    else if (page == 4) {
+            page4draw();
+}
 }
 
 function page1draw() {
@@ -169,13 +175,20 @@ function page2draw() {
 }
 
 function page3draw() {
+
+    currenntHighlightRotation += 0.03
     drawImage(page3BG);
-    
     drawImage(page3Box);
     drawImage(dot);
-    drawImage(drawingBlue2, cos(tick/60) * 0.5, 250, 250);
+    drawImage(drawingBlue2, currenntHighlightRotation, 250, 250);
     drawImage(page3Game, sin(tick/20) * 0.1, 100, 90);
     drawImage(catLooking);
+}
+
+function page4draw() {
+
+
+
 }
 
 
