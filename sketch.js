@@ -1,6 +1,6 @@
 let img;
 let circThere = true;
-let page = 3;
+let page = 4;
 let mouseIsPressed = false;
 
 let canvasWidth = 1000
@@ -34,6 +34,8 @@ function preload() {
     catLookBoxImg = loadImage("Assetination/catlookatbox.png")
     livingRoomImg = loadImage("Assetination/livingroom.jpg")
     tvImg = loadImage("Assetination/tv.png")
+    spaceshipImg = loadImage("Assetination/spaceship.png");
+    blackImg = loadImage("Assetination/black.png");
 }
 
 function setup() {
@@ -84,7 +86,8 @@ function setup() {
     // page 4
     livingRoom = new OurImage(livingRoomImg, 0, 0, 20, 1, 1);
     tv = new OurImage(tvImg, 230, 65, 15, 0.6, 0.6);
-
+    black = new OurImage(blackImg, 330, 160, 15, 0.412, 0.34)
+    spaceship= new OurImage(spaceshipImg, 230, 65, 15, 0.06, 0.1);
 }
 
 function draw() {
@@ -190,10 +193,18 @@ function page3draw() {
 }
 
 function page4draw() {
-    drawImage(livingRoom)
-    drawImage(tv)
+    spaceship.x = mouseX-50;
+    spaceship.y = mouseY-50;
 
+    if (spaceship.x > 700) { spaceship.x = 700 }
+    if (spaceship.x < 320) { spaceship.x = 320 }
+    if (spaceship.y > 320) { spaceship.y = 320 }
+    if (spaceship.y < 170) { spaceship.y = 170 }
 
+    drawImage(livingRoom);
+    drawImage(tv);
+    drawImage(black);
+    drawImage(spaceship);
 }
 
 
