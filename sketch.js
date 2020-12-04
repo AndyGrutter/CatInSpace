@@ -27,6 +27,9 @@ function preload() {
     drawingYImg = loadImage("Assetination/lightyellow.png");
     drawingBImg = loadImage("Assetination/bluelight.png");
     page3BgImg = loadImage("Assetination/quartier1 1.png");
+    page3BoxImg = loadImage("Assetination/openbox 1.png");
+    page3GameImg = loadImage("Assetination/gamebox.png");
+    catLookingImg = loadImage("Assetination/cat_lookingAROUND3.gif")
 }
 
 function setup() {
@@ -62,10 +65,13 @@ function setup() {
     boxGravity = 14;
     boxGroundLevel = frontPorchBox.y;
     boxOpenTimer = 0;
-    boxOpenInFrames = 230;
+    boxOpenInFrames = 200;
 
     // page 3
     page3BG = new OurImage(page3BgImg, 0, 0, 20, 1, 1);
+    page3Box = new OurImage(page3BoxImg, 200, 120, 40, .6, .7);
+    page3Game = new OurImage(page3GameImg, 400, 250, 40, .2, .35);
+    catLooking = new OurImage(catLookingImg, 500, 300, 50, .5, .5);
 }
 
 function draw() {
@@ -98,6 +104,8 @@ function page1draw() {
     }
     else { drawImage(chair) }
 
+    drawImage(dot);
+
     drawImage(cat);
 
     if (interiorBG.IsClicked()) {
@@ -114,8 +122,6 @@ function page1draw() {
     if (page1Timer > 400) {
         drawImage(dong);
     }
-
-    drawImage(dot);
 }
 
 function page2draw() {
@@ -123,6 +129,8 @@ function page2draw() {
     drawImage(chairtable);
     drawImage(frontPorchFG);
     drawImage(drawingBlue);
+
+    drawImage(dot);
     drawImage(frontPorchBox);
     drawImage(drawingYellow1, Math.sin(tick/40) * 0.1, 60, 60);
     drawImage(drawingYellow2, -(Math.sin(tick/40) * 0.1), 60, 60);
@@ -153,14 +161,14 @@ function page2draw() {
     {
         page = 3;
     }
-
-    drawImage(dot);
 }
 
 function page3draw() {
     drawImage(page3BG);
-
+    drawImage(page3Box);
     drawImage(dot);
+    drawImage(page3Game, sin(tick/20) * 0.1, 100, 90);
+    drawImage(catLooking)
 }
 
 
