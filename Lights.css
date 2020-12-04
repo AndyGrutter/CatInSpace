@@ -1,9 +1,5 @@
-html, body {
+ html, body {
     height: 100%;
-  }
-  
-  body {
-    margin: 0;
     display: flex;
   
     /* This centers our sketch horizontally. */
@@ -11,16 +7,38 @@ html, body {
   
     /* This centers our sketch vertically. */
     align-items: center;
+    
 
-        width: 1000px;
-        height: 600px;
-        border: 25px solid #ffffff;
-        box-shadow: 1px 2px 7px rgba(0, 0, 0, 0.4);
+  } 
+  
+  .javascript {
+    display: flex;
+  }
+  .container{
+    width:30%;
+    height:20%;
+    display:flex;
+    justify-content:center;
+    padding: 10%; 
+    position: absolute;
+    border: 25px solid #ffffff;
+    box-shadow: 1px 2px 7px rgba(0, 0, 0, 0.4);
     
   }
 
+  /* .borders {
+    padding: 10%;
+    height: 10%;
+    display:flex;
+    position: fixed;
+    border: 25px solid #ffffff;
+    box-shadow: 1px 2px 7px rgba(0, 0, 0, 0.4);
+  } */
  /*  .frame {
       position: absolute;
 
   } */
   
+  /* align-items:center;
+  border: 25px solid #ffffff;
+  box-shadow: 1px 2px 7px rgba(0, 0, 0, 0.4); */
