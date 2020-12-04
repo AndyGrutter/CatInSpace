@@ -26,6 +26,7 @@ function preload() {
     dotsimg = loadImage("Assetination/dottexture.png");
     drawingYImg = loadImage("Assetination/lightyellow.png");
     drawingBImg = loadImage("Assetination/bluelight.png");
+    drawingBImg2 = loadImage("Assetination/bluelight.png");
     page3BgImg = loadImage("Assetination/quartier1 1.png");
     page3BoxImg = loadImage("Assetination/openbox 1.png");
     page3GameImg = loadImage("Assetination/gamebox.png");
@@ -74,7 +75,7 @@ function setup() {
     page3Box = new OurImage(page3BoxImg, 200, 120, 40, .6, .7);
     page3Game = new OurImage(page3GameImg, 400, 250, 40, .2, .35);
     catLooking = new OurImage(catLookingImg, 500, 300, 50, .5, .5);
-    drawingBlue = new OurImage(drawingBImg, 350, 250, 200, 0.5, 0.5);
+    drawingBlue2 = new OurImage(drawingBImg2, 350, 250, 200, 0.5, 0.5);
 }
 
 function draw() {
@@ -169,7 +170,7 @@ function page2draw() {
 
 function page3draw() {
     drawImage(page3BG);
-    drawImage(drawingBlue, sin(tick/60) * 0.5, 100, 360);
+    drawImage(drawingBlue2, sin(tick/60) * 0.5, 100, 360);
     drawImage(page3Box);
     drawImage(dot);
     drawImage(page3Game, sin(tick/20) * 0.1, 100, 90);
