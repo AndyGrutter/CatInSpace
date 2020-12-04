@@ -1,6 +1,6 @@
 let img;
 let circThere = true;
-let page = 1;
+let page = 3;
 let mouseIsPressed = false;
 
 let canvasWidth = 1000
@@ -74,6 +74,7 @@ function setup() {
     page3Box = new OurImage(page3BoxImg, 200, 120, 40, .6, .7);
     page3Game = new OurImage(page3GameImg, 400, 250, 40, .2, .35);
     catLooking = new OurImage(catLookingImg, 500, 300, 50, .5, .5);
+    drawingBlue = new OurImage(drawingBImg, 350, 250, 200, 0.5, 0.5);
 }
 
 function draw() {
@@ -168,10 +169,11 @@ function page2draw() {
 
 function page3draw() {
     drawImage(page3BG);
+    drawImage(drawingBlue, sin(tick/60) * 0.5, 100, 360);
     drawImage(page3Box);
     drawImage(dot);
     drawImage(page3Game, sin(tick/20) * 0.1, 100, 90);
-    drawImage(catLooking)
+    drawImage(catLooking);
 }
 
 
