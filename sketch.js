@@ -1,6 +1,6 @@
 let img;
 let circThere = true;
-let page = 4;
+let page = 5;
 let mouseIsPressed = false;
 
 let canvasWidth = 1000
@@ -40,6 +40,13 @@ function preload() {
     stars2Img = loadImage("Assetination/stars_F2.png");
     stars3Img = loadImage("Assetination/stars_F3.png");
     stars4Img = loadImage("Assetination/stars_F4.png");
+    garageImg = loadImage("Assetination/garageBG2.png")
+    catSitting = loadImage("Assetination/Cat2.png");
+    hammerImg = loadImage("Assetination/hammer2.png");
+    wrenchImg = loadImage("Assetination/wrench3.png");
+    pinktoolImg = loadImage("Assetination/tool3.png");
+    rocketImg = loadImage("Assetination/rocket2.png")
+
 }
 
 function setup() {
@@ -96,6 +103,14 @@ function setup() {
 
     framesUntilStarsSwitch = 10
     starCounter = 0;
+
+    // page 5
+    garageBG = new OurImage(garageImg, 0, 0, 20, 1, 1);
+    catSittingLeft = new OurImage(catSitting, 6, 405, 15, 0.28, 0.4);
+    hammer = new OurImage(hammerImg, 800, 250, 15, 0.33, 0.5);
+    wrench = new OurImage(wrenchImg, 770, 0, 15, 0.33, 0.5)
+    tool = new OurImage(pinktoolImg, -100, 100, 15, 0.33, 0.5);
+    rocket = new OurImage(rocketImg, 350, 170, 20, .3, .6);
 }
 
 function draw() {
@@ -109,6 +124,8 @@ function draw() {
         page3draw();
     } else if (page == 4) {
         page4draw();
+    } else if (page == 5) {
+        page5draw();
     }
 }
 
@@ -242,6 +259,14 @@ function page4draw() {
     drawImage(spaceship);
 }
 
+function page5draw() {
+    drawImage(garageBG);
+    drawImage(catSittingLeft);
+    drawImage(hammer);
+    drawImage(wrench);
+    drawImage(tool);
+    drawImage(rocket);
+}
 
 function drawImage(ourImg, rotation = 0, rotationXOffset = 0, rotationYOffset = 0) {
     let imgX = ourImg.x - ourImg.parallaxOffset + ((mouseX / canvasWidth) * ourImg.parallaxOffset)
