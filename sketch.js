@@ -110,6 +110,8 @@ function setup() {
 
     framesUntilStarsSwitch = 10
     starCounter = 0;
+    framesUntilDreamsSwitch = 10
+    dreamyCounter = 0;
 
     catBack = new OurImage(catBackImg, 450, 345, 7, 0.5, 0.5);
 
@@ -282,6 +284,33 @@ function page4draw() {
 }
 
 function page5draw() {
+
+    if (tick%framesUntilDreamSwitch == 0)
+    {
+        dreamCounter++;
+        if (dreamCounter > 3)
+        {
+            dreamCounter = 0;
+        }
+    }
+
+    switch(dreamyCounter) {
+        case 0:
+            dream.img = dream1Img;
+            break;
+        case 1:
+            dream.img = dream2Img;
+            break;
+        case 2:
+            dream.img = dream3Img;
+            break;
+        case 3:
+            dream.img = dream4Img;
+            break;
+        default:
+            break;
+    }
+
     drawImage(sofaBG);
     //drawImage(dreamy);
     drawImage(bubble);
