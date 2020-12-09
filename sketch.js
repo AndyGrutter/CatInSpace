@@ -36,6 +36,7 @@ function preload() {
     tvImg = loadImage("Assetination/tv.png")
     spaceshipImg = loadImage("Assetination/spaceship.png");
     blackImg = loadImage("Assetination/black.png");
+    starsImg = loadImage("Assetination/stars_moving_behind.gif");
 }
 
 function setup() {
@@ -87,6 +88,7 @@ function setup() {
     livingRoom = new OurImage(livingRoomImg, 0, 0, 20, 1, 1);
     tv = new OurImage(tvImg, 230, 65, 15, 0.6, 0.6);
     black = new OurImage(blackImg, 330, 160, 15, 0.412, 0.34)
+    stars = new OurImage(starsImg, 330, 160, 15, 0.412, 0.34);
     spaceship= new OurImage(spaceshipImg, 230, 65, 15, 0.06, 0.1);
 }
 
@@ -203,7 +205,8 @@ function page4draw() {
 
     drawImage(livingRoom);
     drawImage(tv);
-    drawImage(black);
+    //drawImage(black);
+    drawImage(stars);
     drawImage(spaceship);
 }
 
