@@ -36,7 +36,7 @@ function preload() {
     tvImg = loadImage("Assetination/tv.png")
     spaceshipImg = loadImage("Assetination/spaceship.png");
     blackImg = loadImage("Assetination/black.png");
-    starsImg = loadImage("Assetination/stars_moving_behind.gif");
+    starsImg = loadImage("Assetination/stars_background2.gif");
 }
 
 function setup() {
@@ -205,7 +205,7 @@ function page4draw() {
 
     drawImage(livingRoom);
     drawImage(tv);
-    //drawImage(black);
+    drawImage(black);
     drawImage(stars);
     drawImage(spaceship);
 }
