@@ -1,6 +1,21 @@
 body {
   background-image: url('Assetination/Paperbackground.jpg');
 }
+.thread {
+  position: absolute;
+  display: flex;
+  width: 50%;
+  margin-top: -20%;
+  margin-left: -10%;
+}
+.cat {
+    position: absolute;
+    width: 15%;
+    margin-left: -20%;
+    animation-duration: 20s; 
+    animation-iteration-count: infinite;
+    animation-name: walking;
+  }
 
 .title {
     /* border: 25px solid #ffffff; */
@@ -9,7 +24,7 @@ body {
     height:50%;
     padding-top: 5%;
     display: flex;
-
+ 
     animation-duration: 3s;
     animation-name: scaling;
 }
@@ -129,4 +144,16 @@ body {
       
       }
     }
-    
+
+    /* cat walking animation */
+@keyframes walking {
+  from {
+    margin-left: 110%;
+    width: 15%;
+}
+
+to {
+    margin-left: -20%;
+    width: 15%;
+}
+}
