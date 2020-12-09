@@ -1,6 +1,6 @@
 let img;
 let circThere = true;
-let page = 5;
+let page = 1;
 let mouseIsPressed = false;
 
 let canvasWidth = 1000
@@ -40,6 +40,7 @@ function preload() {
     stars2Img = loadImage("Assetination/stars_F2.png");
     stars3Img = loadImage("Assetination/stars_F3.png");
     stars4Img = loadImage("Assetination/stars_F4.png");
+    catBackImg = loadImage("Assetination/catback.png")
     garageImg = loadImage("Assetination/garageBG2.png")
     catSitting = loadImage("Assetination/Cat2.png");
     hammerImg = loadImage("Assetination/hammer2.png");
@@ -103,6 +104,8 @@ function setup() {
 
     framesUntilStarsSwitch = 10
     starCounter = 0;
+
+    catBack = new OurImage(catBackImg, 450, 345, 7, 0.5, 0.5);
 
     // page 5
     garageBG = new OurImage(garageImg, 0, 0, 20, 1, 1);
@@ -253,10 +256,12 @@ function page4draw() {
     }
 
     drawImage(livingRoom);
+    drawImage(dot);
     drawImage(tv);
     drawImage(black);
     drawImage(stars);
     drawImage(spaceship);
+    drawImage(catBack);
 }
 
 function page5draw() {
