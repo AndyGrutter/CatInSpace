@@ -118,11 +118,11 @@ function setup() {
 
     // page 5
     sofaBG = new OurImage(sofaImg, 0, 0, 20, 1, 1);
-    dream = new OurImage(dream1Img, 20, 120, 15, 0.9, 0.7);
+    dream = new OurImage(dream1Img, 20, 120, 17, 0.9, 0.7);
     
     bubble = new OurImage(bubbleImg, 600, 0, 15, 0.4, 0.6);
     catBubble = new OurImage(rocketcatImg, 600, 0, 15, 0.4, 0.6);
-    blanket = new OurImage(blanketImg, 0, 0, 20, 1, 1);
+    blanket = new OurImage(blanketImg, 0, 0, 10, 1, 1);
 
     framesUntilDreamSwitch = 30
     dreamCounter = 0;
@@ -317,6 +317,7 @@ function page5draw() {
     }
 
     drawImage(sofaBG);
+    drawImage(dot);
     drawImage(dream);
     drawImage(bubble);
     drawImage(catBubble);
