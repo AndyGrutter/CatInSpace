@@ -55,6 +55,28 @@ body {
   margin-top: -20%;
   margin-left: -10%;
 }
+
+.cutletters{
+  position: absolute;
+  display: flex;
+  width: 20%;
+  margin-top: 80%;
+  margin-left: 70%;
+}
+
+.catinrocket{
+  position: absolute;
+  display: flex;
+  width: 10%;
+  margin-top: 120%;
+  margin-left: 76%;
+  transition: all .5s ease-in-out;
+}
+
+.catinrocket:hover { 
+  transform: rotate(-360deg) scale(1.2);
+}
+
 .cat {
     position: absolute;
     width: 15%;
