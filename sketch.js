@@ -118,7 +118,7 @@ function setup() {
 
     // page 5
     sofaBG = new OurImage(sofaImg, 0, 0, 20, 1, 1);
-    dream = new OurImage(dream1Img, 330, 160, 15, 0.6, 0.48);
+    dream = new OurImage(dream1Img, 20, 120, 15, 0.9, 0.7);
     
     bubble = new OurImage(bubbleImg, 600, 0, 15, 0.4, 0.6);
     catBubble = new OurImage(rocketcatImg, 600, 0, 15, 0.4, 0.6);
