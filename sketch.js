@@ -46,7 +46,7 @@ function preload() {
     dream2Img = loadImage("Assetination/dreamy_F2.png");
     dream3Img = loadImage("Assetination/dreamy_F3.png");
     dream4Img = loadImage("Assetination/dreamy_F4.png");
-    bubbleImg = loadImage("Assetination/dreambubble.png");
+    bubbleImg = loadImage("Assetination/dreambubblewithrocket.png");
     rocketcatImg = loadImage("Assetination/catrocketinbubble.png");
     blanketImg = loadImage("Assetination/blanketlayer.png");
 
