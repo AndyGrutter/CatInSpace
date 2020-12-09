@@ -1,7 +1,132 @@
 body {
   background-image: url('Assetination/Paperbackground.jpg');
-  border: 25px solid #ffffff;
-    width:100%;
-    height:100%;
-    display: flex;
 }
+
+.title {
+    /* border: 25px solid #ffffff; */
+    padding-left: 20%;
+    width:50%;
+    height:50%;
+    padding-top: 5%;
+    display: flex;
+
+    animation-duration: 3s;
+    animation-name: scaling;
+}
+.imagecontainer {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5%;
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  
+
+}
+
+.polaroidBlue {
+  width: 15%;
+  height: 15%;
+  transform: rotate(30deg);
+  filter: grayscale(70%);
+  transition: all .2s ease-in-out;
+}
+
+.polaroidBlue:hover { 
+  transform: rotate(25deg) scale(1.1);
+  filter: grayscale(0%);
+}
+
+.polaroidPink {
+  width: 15%;
+  height: 15%;
+  padding-top: 5%;
+  transform: rotate(-25deg);
+  filter: grayscale(70%);
+  transition: all .2s ease-in-out;
+}
+
+.polaroidPink:hover { 
+  transform: rotate(-20deg) scale(1.1);
+  filter: grayscale(0%);
+}
+
+
+.polaroidgreen {
+  width: 15%;
+  height: 15%;
+  padding-top: 5%;
+  transform: rotate(-5deg);
+  filter: grayscale(70%);
+  transition: all .2s ease-in-out;
+}
+
+.polaroidgreen:hover { 
+  transform: rotate(-10deg) scale(1.1);
+  filter: grayscale(0%);
+}
+
+.polaroidYellow {
+  width: 15%;
+  height: 15%;
+  padding-top: 5%;
+  transform: rotate(27deg);
+  filter: grayscale(70%);
+  transition: all .2s ease-in-out;
+}
+.polaroidYellow:hover { 
+  transform: rotate(32deg) scale(1.1);
+  filter: grayscale(0%);
+}
+
+.polaroidOrange {
+  width: 15%;
+  height: 15%;
+  padding-top: 5%;
+  transform: rotate(14deg);
+  filter: grayscale(70%);
+  transition: all .2s ease-in-out;
+}
+.polaroidOrange:hover { 
+  transform: rotate(16deg) scale(1.1);
+  filter: grayscale(0%);
+}
+
+.polaroiddarkblue {
+  width: 15%;
+  height: 15%;
+  padding-top: 5%;
+  transform: rotate(-20deg);
+  filter: grayscale(70%);
+  transition: all .2s ease-in-out;
+}
+.polaroiddarkblue:hover { 
+  transform: rotate(-15deg) scale(1.1);
+  filter: grayscale(0%);
+}
+
+
+/* animation */
+@keyframes scaling {
+  0% {
+    transform: scale(1.0);
+      
+      }
+
+      50% {
+        transform: scale(.9);
+      
+    }
+
+    75% {
+      transform: scale(.8);
+    } 
+
+  100% {
+    transform: scale(1.0);
+      
+      }
+    }
+    
