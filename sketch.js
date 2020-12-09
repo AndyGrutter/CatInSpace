@@ -1,6 +1,6 @@
 let img;
 let circThere = true;
-let page = 5;
+let page = 4;
 let mouseIsPressed = false;
 
 let canvasWidth = 1000
