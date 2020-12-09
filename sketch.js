@@ -110,7 +110,7 @@ function setup() {
     hammer = new OurImage(hammerImg, 800, 250, 15, 0.33, 0.5);
     wrench = new OurImage(wrenchImg, 770, 0, 15, 0.33, 0.5)
     tool = new OurImage(pinktoolImg, -100, 100, 15, 0.33, 0.5);
-    rocket = new OurImage(rocketImg, 350, 170, 20, .3, .6);
+    rocket = new OurImage(rocketImg, 350, 170, 15, .3, .6);
 }
 
 function draw() {
