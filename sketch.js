@@ -36,7 +36,10 @@ function preload() {
     tvImg = loadImage("Assetination/tv.png")
     spaceshipImg = loadImage("Assetination/spaceship.png");
     blackImg = loadImage("Assetination/black.png");
-    starsImg = loadImage("Assetination/stars_background2.gif");
+    stars1Img = loadImage("Assetination/stars_F1.png");
+    stars2Img = loadImage("Assetination/stars_F2.png");
+    stars3Img = loadImage("Assetination/stars_F3.png");
+    stars4Img = loadImage("Assetination/stars_F4.png");
 }
 
 function setup() {
@@ -88,8 +91,11 @@ function setup() {
     livingRoom = new OurImage(livingRoomImg, 0, 0, 20, 1, 1);
     tv = new OurImage(tvImg, 230, 65, 15, 0.6, 0.6);
     black = new OurImage(blackImg, 330, 160, 15, 0.412, 0.34)
-    stars = new OurImage(starsImg, 330, 160, 15, 0.412, 0.34);
+    stars = new OurImage(stars1Img, 280, 155, 15, 0.467, 0.395);
     spaceship= new OurImage(spaceshipImg, 230, 65, 15, 0.06, 0.1);
+
+    framesUntilStarsSwitch = 10
+    starCounter = 0;
 }
 
 function draw() {
@@ -202,6 +208,32 @@ function page4draw() {
     if (spaceship.x < 320) { spaceship.x = 320 }
     if (spaceship.y > 320) { spaceship.y = 320 }
     if (spaceship.y < 170) { spaceship.y = 170 }
+
+    if (tick%framesUntilStarsSwitch == 0)
+    {
+        starCounter++;
+        if (starCounter > 3)
+        {
+            starCounter = 0;
+        }
+    }
+
+    switch(starCounter) {
+        case 0:
+            stars.img = stars1Img;
+            break;
+        case 1:
+            stars.img = stars2Img;
+            break;
+        case 2:
+            stars.img = stars3Img;
+            break;
+        case 3:
+            stars.img = stars4Img;
+            break;
+        default:
+            break;
+    }
 
     drawImage(livingRoom);
     drawImage(tv);
