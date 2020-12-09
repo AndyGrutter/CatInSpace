@@ -1,6 +1,6 @@
 let img;
 let circThere = true;
-let page = 1;
+let page = 5;
 let mouseIsPressed = false;
 
 let canvasWidth = 1000
@@ -41,12 +41,18 @@ function preload() {
     stars3Img = loadImage("Assetination/stars_F3.png");
     stars4Img = loadImage("Assetination/stars_F4.png");
     catBackImg = loadImage("Assetination/catback.png")
+    sofaImg = loadImage("Assetination/livingroom_sofa.png");
+    dreamycatImg = loadImage("Assetination/dreamycat.gif");
+    bubbleImg = loadImage("Assetination/dreambubble.png");
+    rocketcatImg = loadImage("Assetination/catrocketinbubble.png");
+    blanketImg = loadImage("Assetination/blanketlayer.png");
+
     garageImg = loadImage("Assetination/garageBG2.png")
     catSitting = loadImage("Assetination/Cat2.png");
     hammerImg = loadImage("Assetination/hammer2.png");
     wrenchImg = loadImage("Assetination/wrench3.png");
     pinktoolImg = loadImage("Assetination/tool3.png");
-    rocketImg = loadImage("Assetination/rocket2.png")
+    rocketImg = loadImage("Assetination/rocket2.png");
 
 }
 
@@ -98,7 +104,7 @@ function setup() {
     // page 4
     livingRoom = new OurImage(livingRoomImg, 0, 0, 20, 1, 1);
     tv = new OurImage(tvImg, 230, 65, 15, 0.6, 0.6);
-    black = new OurImage(blackImg, 330, 160, 15, 0.412, 0.34)
+    black = new OurImage(blackImg, 330, 160, 15, 0.412, 0.34);
     stars = new OurImage(stars1Img, 280, 155, 15, 0.467, 0.395);
     spaceship= new OurImage(spaceshipImg, 230, 65, 15, 0.06, 0.1);
 
@@ -108,6 +114,14 @@ function setup() {
     catBack = new OurImage(catBackImg, 450, 345, 7, 0.5, 0.5);
 
     // page 5
+    sofaBG = new OurImage(sofaImg, 0, 0, 20, 1, 1);
+    dreamy = new OurImage(dreamycatImg, 330, 160, 15, 0.4, 0.3);
+    bubble = new OurImage(bubbleImg, 600, 0, 15, 0.4, 0.6);
+    catBubble = new OurImage(rocketcatImg, 600, 0, 15, 0.4, 0.6);
+    blanket = new OurImage(blanketImg, 0, 0, 20, 1, 1);
+   
+
+    // page 6
     garageBG = new OurImage(garageImg, 0, 0, 20, 1, 1);
     catSittingLeft = new OurImage(catSitting, 6, 405, 18, 0.28, 0.4);
     hammer = new OurImage(hammerImg, 800, 250, 15, 0.33, 0.5);
@@ -129,6 +143,9 @@ function draw() {
         page4draw();
     } else if (page == 5) {
         page5draw();
+    }
+    else if (page == 6) {
+        page6draw();
     }
 }
 
@@ -265,6 +282,15 @@ function page4draw() {
 }
 
 function page5draw() {
+    drawImage(sofaBG);
+    //drawImage(dreamy);
+    drawImage(bubble);
+    drawImage(catBubble);
+    drawImage(blanket);
+    
+}
+
+function page6draw() {
     drawImage(garageBG);
     drawImage(catSittingLeft);
     drawImage(hammer);
