@@ -42,7 +42,10 @@ function preload() {
     stars4Img = loadImage("Assetination/stars_F4.png");
     catBackImg = loadImage("Assetination/catback.png")
     sofaImg = loadImage("Assetination/livingroom_sofa.png");
-    dreamycatImg = loadImage("Assetination/dreamycat.gif");
+    dream1Img = loadImage("Assetination/dreamy_F1.png");
+    dream2Img = loadImage("Assetination/dreamy_F2.png");
+    dream3Img = loadImage("Assetination/dreamy_F3.png");
+    dream4Img = loadImage("Assetination/dreamy_F4.png");
     bubbleImg = loadImage("Assetination/dreambubble.png");
     rocketcatImg = loadImage("Assetination/catrocketinbubble.png");
     blanketImg = loadImage("Assetination/blanketlayer.png");
@@ -110,17 +113,19 @@ function setup() {
 
     framesUntilStarsSwitch = 10
     starCounter = 0;
-    framesUntilDreamsSwitch = 10
-    dreamyCounter = 0;
 
     catBack = new OurImage(catBackImg, 450, 345, 7, 0.5, 0.5);
 
     // page 5
     sofaBG = new OurImage(sofaImg, 0, 0, 20, 1, 1);
-    dreamy = new OurImage(dreamycatImg, 330, 160, 15, 0.4, 0.3);
+    dream = new OurImage(dream1Img, 330, 160, 15, 0.6, 0.48);
+    
     bubble = new OurImage(bubbleImg, 600, 0, 15, 0.4, 0.6);
     catBubble = new OurImage(rocketcatImg, 600, 0, 15, 0.4, 0.6);
     blanket = new OurImage(blanketImg, 0, 0, 20, 1, 1);
+
+    framesUntilDreamSwitch = 30
+    dreamCounter = 0;
    
 
     // page 6
@@ -294,7 +299,7 @@ function page5draw() {
         }
     }
 
-    switch(dreamyCounter) {
+    switch(dreamCounter) {
         case 0:
             dream.img = dream1Img;
             break;
@@ -312,7 +317,7 @@ function page5draw() {
     }
 
     drawImage(sofaBG);
-    //drawImage(dreamy);
+    drawImage(dream);
     drawImage(bubble);
     drawImage(catBubble);
     drawImage(blanket);
