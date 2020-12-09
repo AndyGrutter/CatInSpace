@@ -317,6 +317,7 @@ function page5draw() {
     }
 
     drawImage(sofaBG);
+    drawImage(dot);
     drawImage(dream);
     drawImage(bubble);
     drawImage(catBubble);
