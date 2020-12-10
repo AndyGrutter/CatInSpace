@@ -58,6 +58,9 @@ function preload() {
     rocketImg = loadImage("Assetination/rocket2.png");
     rocketCat2Img = loadImage("Assetination/rocketwithcat2.png");
 
+    spaceImg = loadImage("Assetination/spaceBG.png");
+    starsinspaceImg = loadImage("Assetination/stars_layer.png");
+
 }
 
 function setup() {
@@ -143,6 +146,8 @@ function setup() {
     catUpYStep = 0.01;
 
     // page 7
+    space = new OurImage(spaceImg, 0, 0, 20, 1, 1);
+    starsonspace = new OurImage(starsinspaceImg, 0, 0, 12, 1, 1); 
 }
 
 function draw() {
@@ -161,6 +166,9 @@ function draw() {
     }
     else if (page == 6) {
         page6draw();
+    }
+    else if (page == 7) {
+        page7draw();
     }
 }
 
@@ -344,9 +352,6 @@ function page5draw() {
 
 function page6draw() {
     drawImage(garageBG);
-    if (!catInRocket){
-    drawImage(catSittingLeft);
-    }
 
     if (hammer.IsHovered()) {
         drawImage(hammer, -0.5, 120, 170);
@@ -362,7 +367,13 @@ function page6draw() {
         drawImage(tool, 0.3, 120, 170);
     }
     else { drawImage(tool) }
-    
+
+    drawImage(dot);
+
+    if (!catInRocket){
+    drawImage(catSittingLeft);
+    }
+
     drawImage(rocket);
 
     if (rocket.IsClicked()){
@@ -377,7 +388,13 @@ function page6draw() {
 }
 
 function page7draw(){
+    catRocket.x = mouseX + -200;
+    catRocket.y = mouseY + -100;
 
+    drawImage(space);
+    drawImage(catRocket);
+    drawImage(starsonspace);
+    
 
 }
 
