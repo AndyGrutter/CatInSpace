@@ -61,6 +61,8 @@ function preload() {
     spaceImg = loadImage("Assetination/spaceBG.png");
     starsinspaceImg = loadImage("Assetination/stars_layer.png");
 
+    dingdongSound = createAudio("Assetination/sound/dingdong.mp3");
+    meowSound = createAudio("Assetination/sound/meowmeow.mp3");
 }
 
 function setup() {
@@ -77,7 +79,8 @@ function setup() {
     chair = new OurImage(chairImg, 100, 200, 16, 0.2, 0.5);
     cat = new OurImage(catbedImg, 300, 370, 16, 0.35, 0.35);
 
-    showDingDong = false
+    showDingDong = false;
+    showedDingDong = false;
     page1Timer = 0;
 
     // page 2
@@ -197,12 +200,23 @@ function page1draw() {
 
     drawImage(cat);
 
+    if (cat.IsHovered())
+    {
+        meowSound.play();
+    }
+
     if (interiorBG.IsClicked()) {
 
         if (showDingDong) {
             page = 2;
         }
         showDingDong = true;
+
+        if (!showedDingDong)
+        {
+            dingdongSound.play();
+        }
+        showedDingDong = true;
     }
     if (showDingDong) {
         page1Timer += deltaTime;
@@ -224,6 +238,12 @@ function page2draw() {
     drawImage(drawingYellow1, Math.sin(tick / 40) * 0.1, 60, 60);
     drawImage(drawingYellow2, -(Math.sin(tick / 40) * 0.1), 60, 60);
     drawImage(catLookBox);
+
+    
+    if (catLookBox.IsHovered())
+    {
+        meowSound.play();
+    }
 
     if (frontPorchBox.IsClicked() && boxClickCounter < 3) {
         boxJumpVelocity = 15 + (boxClickCounter * 2);
@@ -257,6 +277,11 @@ function page3draw() {
     drawImage(drawingBlue2, currenntHighlightRotation, 250, 250);
     drawImage(page3Game, sin(tick / 20) * 0.1, 100, 90);
     drawImage(catLooking);
+
+    if (catLooking.IsHovered())
+    {
+        meowSound.play();
+    }
 
     if (page3BG.IsClicked()){
         page = 4;
@@ -306,6 +331,11 @@ function page4draw() {
     drawImage(spaceship);
     drawImage(catBack);
 
+    if (catBack.IsHovered())
+    {
+        meowSound.play();
+    }
+
     if (livingRoom.IsClicked()){
         page = 5;
     }
@@ -347,6 +377,11 @@ function page5draw() {
     drawImage(catBubble);
     drawImage(blanket);
 
+    if (catBubble.IsHovered())
+    {
+        meowSound.play();
+    }
+
     if (bubble.IsClicked()){
         page = 6;
     }
@@ -374,7 +409,12 @@ function page6draw() {
     drawImage(dot);
 
     if (!catInRocket){
-    drawImage(catSittingLeft);
+        drawImage(catSittingLeft);
+
+        if (catSittingLeft.IsHovered())
+        {
+            meowSound.play();
+        }
     }
 
     drawImage(rocket);
