@@ -56,6 +56,7 @@ function preload() {
     wrenchImg = loadImage("Assetination/wrench3.png");
     pinktoolImg = loadImage("Assetination/tool3.png");
     rocketImg = loadImage("Assetination/rocket2.png");
+    rocketCat2Img = loadImage("Assetination/rocketwithcat2.png");
 
 }
 
@@ -135,6 +136,9 @@ function setup() {
     wrench = new OurImage(wrenchImg, 770, 0, 15, 0.33, 0.5)
     tool = new OurImage(pinktoolImg, -100, 100, 15, 0.33, 0.5);
     rocket = new OurImage(rocketImg, 350, 170, 17, .3, .6);
+    catRocket = new OurImage(rocketCat2Img, 350, 170, 17, 0.3, 0.6);
+
+    catInRocket = false;
 }
 
 function draw() {
@@ -336,12 +340,21 @@ function page5draw() {
 
 function page6draw() {
     drawImage(garageBG);
+    if (!catInRocket){
     drawImage(catSittingLeft);
+    }
     drawImage(hammer);
     drawImage(wrench);
     drawImage(tool);
     drawImage(rocket);
+
+    if (rocket.IsClicked()){
+        rocket.img = rocketCat2Img;
+        catInRocket = true
+    }
+    
 }
+
 
 function drawImage(ourImg, rotation = 0, rotationXOffset = 0, rotationYOffset = 0) {
     let imgX = ourImg.x - ourImg.parallaxOffset + ((mouseX / canvasWidth) * ourImg.parallaxOffset)
