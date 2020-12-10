@@ -139,6 +139,8 @@ function setup() {
     catRocket = new OurImage(rocketCat2Img, 350, 170, 17, 0.3, 0.6);
 
     catInRocket = false;
+    catUpYVelocity = 0;
+    catUpYStep = 0.01;
 }
 
 function draw() {
@@ -350,9 +352,13 @@ function page6draw() {
 
     if (rocket.IsClicked()){
         rocket.img = rocketCat2Img;
-        catInRocket = true
+        catInRocket = true;
     }
-    
+    if (catInRocket)
+    {
+        catUpYVelocity += catUpYStep * deltaTime;
+        rocket.y -= catUpYVelocity;
+    }
 }
 
 
