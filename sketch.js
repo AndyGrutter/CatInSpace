@@ -1,6 +1,6 @@
 let img;
 let circThere = true;
-let page = 1;
+let page = 6;
 let mouseIsPressed = false;
 
 let canvasWidth = 1000
@@ -116,7 +116,7 @@ function setup() {
     tv = new OurImage(tvImg, 230, 65, 15, 0.6, 0.6);
     black = new OurImage(blackImg, 330, 160, 15, 0.412, 0.34);
     stars = new OurImage(stars1Img, 280, 155, 15, 0.467, 0.395);
-    spaceship= new OurImage(spaceshipImg, 230, 65, 15, 0.06, 0.1);
+    spaceship = new OurImage(spaceshipImg, 230, 65, 15, 0.06, 0.1);
 
     framesUntilStarsSwitch = 10
     starCounter = 0;
@@ -126,14 +126,14 @@ function setup() {
     // page 5
     sofaBG = new OurImage(sofaImg, 0, 0, 20, 1, 1);
     dream = new OurImage(dream1Img, 20, 120, 17, 0.9, 0.7);
-    
+
     bubble = new OurImage(bubbleImg, 600, 0, 15, 0.4, 0.6);
     catBubble = new OurImage(rocketcatImg, 600, 0, 15, 0.4, 0.6);
     blanket = new OurImage(blanketImg, 0, 0, 10, 1, 1);
 
     framesUntilDreamSwitch = 30
     dreamCounter = 0;
-   
+
 
     // page 6
     garageBG = new OurImage(garageImg, 0, 0, 20, 1, 1);
@@ -153,7 +153,9 @@ function setup() {
 
     // page 7
     space = new OurImage(spaceImg, 0, 0, 20, 1, 1);
-    starsonspace = new OurImage(starsinspaceImg, 0, 0, 12, 1, 1); 
+    starsonspace = new OurImage(starsinspaceImg, 0, 0, 12, 1, 1);
+
+    rocketFly = false
 }
 
 function draw() {
@@ -200,8 +202,7 @@ function page1draw() {
 
     drawImage(cat);
 
-    if (cat.IsHovered())
-    {
+    if (cat.IsHovered()) {
         meowSound.play();
     }
 
@@ -212,8 +213,7 @@ function page1draw() {
         }
         showDingDong = true;
 
-        if (!showedDingDong)
-        {
+        if (!showedDingDong) {
             dingdongSound.play();
         }
         showedDingDong = true;
@@ -239,9 +239,8 @@ function page2draw() {
     drawImage(drawingYellow2, -(Math.sin(tick / 40) * 0.1), 60, 60);
     drawImage(catLookBox);
 
-    
-    if (catLookBox.IsHovered())
-    {
+
+    if (catLookBox.IsHovered()) {
         meowSound.play();
     }
 
@@ -278,35 +277,32 @@ function page3draw() {
     drawImage(page3Game, sin(tick / 20) * 0.1, 100, 90);
     drawImage(catLooking);
 
-    if (catLooking.IsHovered())
-    {
+    if (catLooking.IsHovered()) {
         meowSound.play();
     }
 
-    if (page3BG.IsClicked()){
+    if (page3BG.IsClicked()) {
         page = 4;
     }
 }
 
 function page4draw() {
-    spaceship.x = mouseX-50;
-    spaceship.y = mouseY-50;
+    spaceship.x = mouseX - 50;
+    spaceship.y = mouseY - 50;
 
     if (spaceship.x > 700) { spaceship.x = 700 }
     if (spaceship.x < 320) { spaceship.x = 320 }
     if (spaceship.y > 320) { spaceship.y = 320 }
     if (spaceship.y < 170) { spaceship.y = 170 }
 
-    if (tick%framesUntilStarsSwitch == 0)
-    {
+    if (tick % framesUntilStarsSwitch == 0) {
         starCounter++;
-        if (starCounter > 3)
-        {
+        if (starCounter > 3) {
             starCounter = 0;
         }
     }
 
-    switch(starCounter) {
+    switch (starCounter) {
         case 0:
             stars.img = stars1Img;
             break;
@@ -331,29 +327,26 @@ function page4draw() {
     drawImage(spaceship);
     drawImage(catBack);
 
-    if (catBack.IsHovered())
-    {
+    if (catBack.IsHovered()) {
         meowSound.play();
     }
 
-    if (livingRoom.IsClicked()){
+    if (livingRoom.IsClicked()) {
         page = 5;
     }
-    
+
 }
 
 function page5draw() {
 
-    if (tick%framesUntilDreamSwitch == 0)
-    {
+    if (tick % framesUntilDreamSwitch == 0) {
         dreamCounter++;
-        if (dreamCounter > 3)
-        {
+        if (dreamCounter > 3) {
             dreamCounter = 0;
         }
     }
 
-    switch(dreamCounter) {
+    switch (dreamCounter) {
         case 0:
             dream.img = dream1Img;
             break;
@@ -377,15 +370,14 @@ function page5draw() {
     drawImage(catBubble);
     drawImage(blanket);
 
-    if (catBubble.IsHovered())
-    {
+    if (catBubble.IsHovered()) {
         meowSound.play();
     }
 
-    if (bubble.IsClicked()){
+    if (bubble.IsClicked()) {
         page = 6;
     }
-    
+
 }
 
 function page6draw() {
@@ -408,42 +400,46 @@ function page6draw() {
 
     drawImage(dot);
 
-    if (!catInRocket){
+    if (!catInRocket) {
         drawImage(catSittingLeft);
 
-        if (catSittingLeft.IsHovered())
-        {
+        if (catSittingLeft.IsHovered()) {
             meowSound.play();
         }
     }
 
     drawImage(rocket);
 
-    if (rocket.IsClicked()){
+    if (rocket.IsClicked()) {
         rocket.img = rocketCat2Img;
         catInRocket = true;
     }
-    if (catInRocket)
-    {
+    if (catInRocket) {
         catUpYVelocity += catUpYStep * deltaTime;
         rocket.y -= catUpYVelocity;
 
         timeInAir += deltaTime;
-        if (timeInAir >= timeTillGoToSpace)
-        {
+        if (timeInAir >= timeTillGoToSpace) {
             page = 7;
         }
     }
 }
 
-function page7draw(){
-    catRocket.x = mouseX + -170;
-    catRocket.y = mouseY + -300;
+function page7draw() {
 
+    if (catRocket.IsClicked()) {
+        rocketFly = true
+    }
+    if (rocketFly = true) {
+        catRocket.y--
+    }
+    else {
+        catRocket.x = mouseX + -170;
+        catRocket.y = mouseY + -300;
+    }
     drawImage(space);
     drawImage(catRocket);
     drawImage(starsonspace);
-    
 
 }
 
