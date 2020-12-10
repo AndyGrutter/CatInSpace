@@ -1,6 +1,6 @@
 let img;
 let circThere = true;
-let page = 6;
+let page = 1;
 let mouseIsPressed = false;
 
 let canvasWidth = 1000
@@ -63,6 +63,10 @@ function preload() {
 
     dingdongSound = createAudio("Assetination/sound/dingdong.mp3");
     meowSound = createAudio("Assetination/sound/meowmeow.mp3");
+
+    end1Img = loadImage("Assetination/planet.jpg");
+    end2Img = loadImage("Assetination/catinsidespaceship.png");
+    end3Img = loadImage("Assetination/titleending.png");
 }
 
 function setup() {
@@ -158,6 +162,11 @@ function setup() {
     rocketFly = false
     endTimer = 0;
     timeTillEnd = 2000;
+
+    // page 8
+    end1 = new OurImage(end1Img,0,0,20,1,1);
+    end2 = new OurImage(end2Img,0,0,15,1,1);
+    end3 = new OurImage(end3Img,0,0,10,1,1);
 }
 
 function draw() {
@@ -179,6 +188,9 @@ function draw() {
     }
     else if (page == 7) {
         page7draw();
+    } else if (page == 8)
+    {
+        page8draw();
     }
 }
 
@@ -431,7 +443,6 @@ function page7draw() {
 
     if (catRocket.IsClicked()) {
         rocketFly = true;
-        print("aöfjaöefjoöefaw");
     }
 
     if (rocketFly == true) {
@@ -445,7 +456,7 @@ function page7draw() {
 
     if (endTimer >= timeTillEnd)
     {
-        open("index.html", "", "", false);
+        page = 8;
     }
 
     drawImage(space);
@@ -453,6 +464,17 @@ function page7draw() {
     drawImage(starsonspace);
 }
 
+function page8draw()
+{
+    drawImage(end1);
+    drawImage(end2);
+    drawImage(end3);
+
+    if (end1.IsClicked())
+    {
+        open("index.html");
+    }
+}
 
 function drawImage(ourImg, rotation = 0, rotationXOffset = 0, rotationYOffset = 0) {
     let imgX = ourImg.x - ourImg.parallaxOffset + ((mouseX / canvasWidth) * ourImg.parallaxOffset)
