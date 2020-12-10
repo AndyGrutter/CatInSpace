@@ -130,11 +130,11 @@ function setup() {
 
     // page 6
     garageBG = new OurImage(garageImg, 0, 0, 20, 1, 1);
-    catSittingLeft = new OurImage(catSitting, 6, 405, 18, 0.28, 0.4);
+    catSittingLeft = new OurImage(catSitting, 6, 405, 10, 0.28, 0.4);
     hammer = new OurImage(hammerImg, 800, 250, 15, 0.33, 0.5);
     wrench = new OurImage(wrenchImg, 770, 0, 15, 0.33, 0.5)
     tool = new OurImage(pinktoolImg, -100, 100, 15, 0.33, 0.5);
-    rocket = new OurImage(rocketImg, 350, 170, 15, .3, .6);
+    rocket = new OurImage(rocketImg, 350, 170, 17, .3, .6);
 }
 
 function draw() {
