@@ -145,6 +145,9 @@ function setup() {
     catUpYVelocity = 0;
     catUpYStep = 0.01;
 
+    timeInAir = 0;
+    timeTillGoToSpace = 3000;
+
     // page 7
     space = new OurImage(spaceImg, 0, 0, 20, 1, 1);
     starsonspace = new OurImage(starsinspaceImg, 0, 0, 12, 1, 1); 
@@ -384,12 +387,18 @@ function page6draw() {
     {
         catUpYVelocity += catUpYStep * deltaTime;
         rocket.y -= catUpYVelocity;
+
+        timeInAir += deltaTime;
+        if (timeInAir >= timeTillGoToSpace)
+        {
+            page = 7;
+        }
     }
 }
 
 function page7draw(){
-    catRocket.x = mouseX + -200;
-    catRocket.y = mouseY + -100;
+    catRocket.x = mouseX + -170;
+    catRocket.y = mouseY + -300;
 
     drawImage(space);
     drawImage(catRocket);
