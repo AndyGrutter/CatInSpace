@@ -1,6 +1,6 @@
 let img;
 let circThere = true;
-let page = 5;
+let page = 6;
 let mouseIsPressed = false;
 
 let canvasWidth = 1000
@@ -347,9 +347,22 @@ function page6draw() {
     if (!catInRocket){
     drawImage(catSittingLeft);
     }
-    drawImage(hammer);
-    drawImage(wrench);
-    drawImage(tool);
+
+    if (hammer.IsHovered()) {
+        drawImage(hammer, -0.5, 120, 170);
+    }
+    else { drawImage(hammer) }
+
+    if (wrench.IsHovered()) {
+        drawImage(wrench, 0.3, 120, 170);
+    }
+    else { drawImage(wrench) }
+
+    if (tool.IsHovered()) {
+        drawImage(tool, 0.3, 120, 170);
+    }
+    else { drawImage(tool) }
+    
     drawImage(rocket);
 
     if (rocket.IsClicked()){
@@ -365,7 +378,7 @@ function page6draw() {
 
 function page7draw(){
 
-    
+
 }
 
 
