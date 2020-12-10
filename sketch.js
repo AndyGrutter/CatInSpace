@@ -141,6 +141,8 @@ function setup() {
     catInRocket = false;
     catUpYVelocity = 0;
     catUpYStep = 0.01;
+
+    // page 7
 }
 
 function draw() {
@@ -359,6 +361,11 @@ function page6draw() {
         catUpYVelocity += catUpYStep * deltaTime;
         rocket.y -= catUpYVelocity;
     }
+}
+
+function page7draw(){
+
+    
 }
 
 
