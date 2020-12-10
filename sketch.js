@@ -156,6 +156,8 @@ function setup() {
     starsonspace = new OurImage(starsinspaceImg, 0, 0, 12, 1, 1);
 
     rocketFly = false
+    endTimer = 0;
+    timeTillEnd = 2000;
 }
 
 function draw() {
@@ -428,19 +430,27 @@ function page6draw() {
 function page7draw() {
 
     if (catRocket.IsClicked()) {
-        rocketFly = true
+        rocketFly = true;
+        print("aöfjaöefjoöefaw");
     }
-    if (rocketFly = true) {
-        catRocket.y--
+
+    if (rocketFly == true) {
+        catRocket.y-=0.3*deltaTime;
+        endTimer+=deltaTime;
     }
     else {
         catRocket.x = mouseX + -170;
         catRocket.y = mouseY + -300;
     }
+
+    if (endTimer >= timeTillEnd)
+    {
+        open("index.html", "", "", false);
+    }
+
     drawImage(space);
     drawImage(catRocket);
     drawImage(starsonspace);
-
 }
 
 
