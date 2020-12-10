@@ -286,6 +286,11 @@ function page4draw() {
     drawImage(stars);
     drawImage(spaceship);
     drawImage(catBack);
+
+    if (livingRoom.IsClicked()){
+        page = 5;
+    }
+    
 }
 
 function page5draw() {
@@ -322,6 +327,10 @@ function page5draw() {
     drawImage(bubble);
     drawImage(catBubble);
     drawImage(blanket);
+
+    if (bubble.IsClicked()){
+        page = 6;
+    }
     
 }
 
