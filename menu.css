@@ -10,6 +10,12 @@ body {
   flex-direction: column
 }
 
+.starthere {
+  margin-top: -70%;
+  margin-left: -45%;
+  width: 40%;
+}
+
 .boxdrawing{
   width: 70%;
 }
@@ -81,6 +87,7 @@ body {
     position: absolute;
     width: 15%;
     margin-left: -20%;
+    margin-top: -10%;
     animation-duration: 20s; 
     animation-iteration-count: infinite;
     animation-name: walking;
@@ -93,10 +100,8 @@ body {
     height:50%;
     padding-top: 5%;
     display: flex;
- 
-    animation-duration: 3s;
-    animation-name: scaling;
 }
+
 .imagecontainer {
   display: flex;
   margin-left: auto;
@@ -111,22 +116,22 @@ body {
 }
 
 .polaroidBlue {
-  width: 15%;
-  height: 15%;
-  transform: rotate(30deg);
-  filter: grayscale(70%);
+  width: 20%;
+  height: 20%;
+  transform: rotate(10deg);
+  filter: grayscale(70%) blur(2px);
   transition: all .2s ease-in-out;
 }
 
 .polaroidBlue:hover { 
-  transform: rotate(25deg) scale(1.1);
-  filter: grayscale(0%);
+  transform: rotate(15deg) scale(1.1);
+  filter: grayscale(0%) blur(0px);
 }
 
 .polaroidPink {
   width: 15%;
   height: 15%;
-  padding-top: 5%;
+  padding-top: 10%;
   transform: rotate(-25deg);
   filter: grayscale(70%);
   transition: all .2s ease-in-out;
@@ -141,7 +146,7 @@ body {
 .polaroidgreen {
   width: 15%;
   height: 15%;
-  padding-top: 5%;
+  padding-top: 10%;
   transform: rotate(-5deg);
   filter: grayscale(70%);
   transition: all .2s ease-in-out;
@@ -155,7 +160,7 @@ body {
 .polaroidYellow {
   width: 15%;
   height: 15%;
-  padding-top: 5%;
+  padding-top: 10%;
   transform: rotate(27deg);
   filter: grayscale(70%);
   transition: all .2s ease-in-out;
@@ -168,7 +173,7 @@ body {
 .polaroidOrange {
   width: 15%;
   height: 15%;
-  padding-top: 5%;
+  padding-top: 10%;
   transform: rotate(14deg);
   filter: grayscale(70%);
   transition: all .2s ease-in-out;
@@ -181,7 +186,7 @@ body {
 .polaroiddarkblue {
   width: 15%;
   height: 15%;
-  padding-top: 5%;
+  padding-top: 10%;
   transform: rotate(-20deg);
   filter: grayscale(70%);
   transition: all .2s ease-in-out;
@@ -192,27 +197,6 @@ body {
 }
 
 
-/* animation */
-@keyframes scaling {
-  0% {
-    transform: scale(1.0);
-      
-      }
-
-      50% {
-        transform: scale(.9);
-      
-    }
-
-    75% {
-      transform: scale(.8);
-    } 
-
-  100% {
-    transform: scale(1.0);
-      
-      }
-    }
 
     /* cat walking animation */
 @keyframes walking {
