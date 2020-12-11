@@ -384,7 +384,7 @@ function page5draw() {
     drawImage(catBubble);
     drawImage(blanket);
 
-    if (catBubble.IsHovered()) {
+    if (dream.IsHovered()) {
         meowSound.play();
     }
 
